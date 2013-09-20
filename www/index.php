@@ -35,7 +35,10 @@ try {
 
 		$connect = new AConnect($config);
 
-		REST::result($connect->getMeetingRoomParticipants('uwap-5-195165500aa3ff5b07ee19d3757a4adddad0b3dc'));
+		REST::result($connect->getMeetingRoomParticipants(AConnect::group2room('uwap:realm:foo')))
+
+
+
 		// REST::result($connect->getMeetingRoomParticipants(array('userid' => 'andreas@uninett.no'), 'uwap-5-195165500aa3ff5b07ee19d3757a4adddad0b3dc', 'FOO'));
 		// REST::result($connect->findMeetingRoomID('uwap-3-195165500aa3ff5b07ee19d3757a4adddad0b3dc', 'NAME'));
 
@@ -64,7 +67,7 @@ try {
 			$uwap->requireUWAPAuth();
 			$uwap->requireMemberOf($group);
 			$user = $uwap->getUser();
-			$roomid = 'uwap-5-' . sha1($group);
+			$roomid = AConnect::group2room($group);
 
 			REST::result($connect->getConnectMeetingRoom($user, $roomid, $roomname));
 
@@ -85,7 +88,7 @@ try {
 			$group = $parameters[1];
 			$uwap->requireUWAPAuth();
 			$uwap->requireMemberOf($group);
-			$roomid = 'uwap-5-' . sha1($group);
+			$roomid = AConnect::group2room($group);
 			REST::result($connect->getMeetingRoomParticipants($roomid));
 
 		} else {

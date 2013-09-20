@@ -17,6 +17,10 @@ class AConnect {
 	}
 
 
+	public static function group2room($group) {
+		return 'uwap-6-' . sha1($group);
+	}
+
 
 	/**
 	 * Simplest call to get the current version of Connect running on connect.uninett.no.
