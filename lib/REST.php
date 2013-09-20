@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * @package UWAP
+ * @author Andreas Åkre Solberg <andreas.solberg@uninett.no>
+ *
+ * Helper library that deals with REST request routing and response JSON wrapping.
+ */
+
 
 class REST {
 

@@ -2,6 +2,8 @@
 /**
  * @package Adobe Connect API connector
  * @author Simon Skrødal <simon.skrodal@uninett.no>
+ *
+ * Client to Adobe Connect APIs.
  * 
  */
 
